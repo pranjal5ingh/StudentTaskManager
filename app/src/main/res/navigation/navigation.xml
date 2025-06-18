@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/upcomingTaskFragment">
+
+    <fragment
+        android:id="@+id/upcomingTaskFragment"
+        android:name="com.example.studenttaskmanager.fragment.UpcomingTaskFragment"
+        android:label="fragment_upcoming_task"
+        tools:layout="@layout/fragment_upcoming_task" />
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.example.studenttaskmanager.fragment.TaskDetailsFragment"
+        android:label="fragment_task_details"
+        tools:layout="@layout/fragment_task_details" />
+    <fragment
+        android:id="@+id/taskCompletedFragment"
+        android:name="com.example.studenttaskmanager.fragment.TaskCompletedFragment"
+        android:label="fragment_task_completed"
+        tools:layout="@layout/fragment_task_completed" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.studenttaskmanager.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
