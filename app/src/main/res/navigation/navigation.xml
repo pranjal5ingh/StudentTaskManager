@@ -11,18 +11,8 @@
         android:label="fragment_upcoming_task"
         tools:layout="@layout/fragment_upcoming_task" />
     <fragment
-        android:id="@+id/taskDetailsFragment"
-        android:name="com.example.studenttaskmanager.fragment.TaskDetailsFragment"
-        android:label="fragment_task_details"
-        tools:layout="@layout/fragment_task_details" />
-    <fragment
         android:id="@+id/taskCompletedFragment"
         android:name="com.example.studenttaskmanager.fragment.TaskCompletedFragment"
         android:label="fragment_task_completed"
         tools:layout="@layout/fragment_task_completed" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.studenttaskmanager.fragment.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
 </navigation>

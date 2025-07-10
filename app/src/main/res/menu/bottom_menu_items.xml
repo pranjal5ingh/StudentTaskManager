@@ -4,13 +4,7 @@
     <item android:title="Home"
         android:id="@+id/upcomingTaskFragment"
         android:icon="@drawable/home"/>
-    <item android:title=" Task Details"
-        android:id="@+id/taskDetailsFragment"
-        android:icon="@drawable/task_details"/>
-    <item android:title="Completed Task"
+      <item android:title="Completed Task"
         android:id="@+id/taskCompletedFragment"
         android:icon="@drawable/task_complete"/>
-    <item android:title="Profile"
-        android:id="@+id/profileFragment"
-        android:icon="@drawable/user"/>
 </menu>

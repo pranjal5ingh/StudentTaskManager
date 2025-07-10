@@ -27,5 +27,5 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 support-annotations = { group = "com.android.support", name = "support-annotations", version.ref = "supportAnnotations" }
 
 [plugins]
-android-application = { id = "com.android.application",  version = "8.8.2" }
+android-application = { id = "com.android.application",  version = "8.10.1" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

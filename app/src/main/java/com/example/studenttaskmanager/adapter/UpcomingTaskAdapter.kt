@@ -1,19 +1,22 @@
-package com.example.studenttaskmanager
+package com.example.studenttaskmanager.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studenttaskmanager.Database.TaskList
+import com.example.studenttaskmanager.R
 import com.example.studenttaskmanager.databinding.ItemTaskBinding
 import java.text.SimpleDateFormat
-import java.util.Date
 import java.util.Locale
 
 class UpcomingTaskAdapter(
-    private var taskList: List<TaskList> = emptyList()
+    private var taskList: List<TaskList> = emptyList(),
+    private val onSingleClick: (TaskList) -> Unit,
+    private val onDoubleClickOrLongPress: (TaskList) -> Unit
 ) : RecyclerView.Adapter<UpcomingTaskAdapter.ViewHolder>() {
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -25,6 +28,24 @@ class UpcomingTaskAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val task = taskList[position]
         holder.bind(task)
+
+
+        var lastClickTime = 0L
+        holder.itemView.setOnClickListener {
+            val now = System.currentTimeMillis()
+            if (now - lastClickTime < 300) {
+                // Double click detected
+                onDoubleClickOrLongPress(task)
+            } else {
+                onSingleClick(task)
+            }
+            lastClickTime = now
+        }
+
+        holder.itemView.setOnLongClickListener {
+            onDoubleClickOrLongPress(task)
+            true
+        }
     }
 
     inner class ViewHolder(private val binding: ItemTaskBinding) :

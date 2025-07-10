@@ -11,7 +11,7 @@ pluginManagement {
         mavenCentral()
     }
     plugins {
-        id("com.android.application") version "8.8.2" // ✅ Must be 8.6.0+
+        id("com.android.application") version "8.10.1" // ✅ Must be 8.6.0+
         id("org.jetbrains.kotlin.android") version "2.1.0"
     }
 }

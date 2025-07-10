@@ -77,6 +77,7 @@
                     android:text="Start Date"
                     android:textSize="14sp"
                     android:textStyle="bold"
+                    android:fontFamily="@font/yeon_sung"
                     android:textColor="@android:color/white"
                     android:background="@drawable/gradient_button_background"
                     android:paddingHorizontal="16dp"
@@ -118,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:text="Select Deadline"
                     android:textSize="14sp"
+                    android:fontFamily="@font/yeon_sung"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:background="@drawable/gradient_button_background"
@@ -168,18 +170,45 @@
                 />
 
             <!-- Save Button -->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_save_task"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Task"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:background="@drawable/gradient_button_background"
+                android:orientation="horizontal"
                 android:layout_marginTop="24dp"
-                android:elevation="4dp"
-                android:paddingVertical="12dp" />
+                android:gravity="center"
+                android:weightSum="2"
+                android:paddingHorizontal="8dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_save_task"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Save Task"
+                    android:fontFamily="@font/yeon_sung"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/gradient_button_background"
+                    android:elevation="4dp"
+                    android:paddingVertical="12dp"
+                    android:layout_marginEnd="8dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_delete_task"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Delete Task"
+                    android:fontFamily="@font/yeon_sung"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:elevation="4dp"
+                    android:paddingVertical="12dp"
+                    android:visibility="gone" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

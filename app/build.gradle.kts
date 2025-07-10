@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -63,6 +64,8 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
     testImplementation("androidx.room:room-testing:$room_version")
     implementation("androidx.room:room-paging:$room_version")
+
+    implementation ("com.google.android.gms:play-services-base:18.3.0")
 
     // Coroutines (matched versions)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")

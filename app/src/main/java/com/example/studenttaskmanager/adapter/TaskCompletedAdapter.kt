@@ -1,17 +1,21 @@
-package com.example.studenttaskmanager
+package com.example.studenttaskmanager.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studenttaskmanager.Database.TaskList
-import com.example.studenttaskmanager.databinding.TaskDetailsItemsBinding
 
-class TaskDetailAdapter( val taskList: List<TaskList>):RecyclerView.Adapter<TaskDetailAdapter.ViewHolder>() {
+import com.example.studenttaskmanager.databinding.TaskDetailsItemsBottomBinding
+
+class TaskCompletedAdapter(
+    var taskList: List<TaskList>,
+
+):RecyclerView.Adapter<TaskCompletedAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        val binding = TaskDetailsItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = TaskDetailsItemsBottomBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
@@ -22,7 +26,7 @@ class TaskDetailAdapter( val taskList: List<TaskList>):RecyclerView.Adapter<Task
 
     override fun getItemCount(): Int = taskList.size
 
-    class ViewHolder(val binding: TaskDetailsItemsBinding):RecyclerView.ViewHolder( binding.root) {
+    class ViewHolder(val binding: TaskDetailsItemsBottomBinding):RecyclerView.ViewHolder( binding.root) {
         fun bind(task: TaskList) {
             binding.textTitle.text = task.title
             binding.textSubject.text = task.subject
@@ -33,5 +37,11 @@ class TaskDetailAdapter( val taskList: List<TaskList>):RecyclerView.Adapter<Task
 
         }
 
+    }
+
+    // Optional: Update data dynamically
+    fun setTasks(tasks: List<TaskList>) {
+        taskList = tasks
+        notifyDataSetChanged()
     }
 }
